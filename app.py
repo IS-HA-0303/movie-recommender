@@ -79,11 +79,15 @@ st.markdown("""
 
 # ================= FETCH POSTER =================
 def fetch_poster(movie_id):
-    response = requests.get(
-        "https://api.themoviedb.org/3/movie/{}?api_key=04d55f53aefebbfb22212048186caf07&language=en-US".format(movie_id)
-    )
+    api_key = st.secrets["cc999130d75bc141af2c769a8e51606d"]   # <-- secure key
+
+    url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={api_key}&language=en-US"
+    
+    response = requests.get(url)
     data = response.json()
+
     return "https://image.tmdb.org/t/p/w500/" + data['poster_path']
+
 
 
 # ================= RECOMMEND =================

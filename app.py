@@ -79,7 +79,7 @@ st.markdown("""
 
 # ================= FETCH POSTER =================
 def fetch_poster(movie_id):
-    api_key = st.secrets["cc999130d75bc141af2c769a8e51606d"]   # <-- secure key
+    api_key = st.secrets["api_key"]   # <-- secure key
 
     url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={api_key}&language=en-US"
     

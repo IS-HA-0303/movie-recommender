@@ -1,5 +1,10 @@
 streamlit
 pandas
+numpy
 requests
+scipy
 scikit-learn
+nltk
+sentence-transformers
+implicit
 gdown

@@ -1,0 +1,11 @@
+.streamlit/
+data/
+content_similarity.pkl
+similarity.pkl
+bert_similarity.pkl
+als_model.pkl
+sparse_user_movie.npz
+sparse_movie_user.npz
+sparse_matrix.npz
+__pycache__/
+*.pyc

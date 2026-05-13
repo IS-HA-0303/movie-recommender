@@ -18,6 +18,7 @@ LARGE_FILES = {
     'sparse_user_movie.npz':  '1brOWw6oEyUCo98exJfhDPvPeququfsDm',
     'sparse_movie_user.npz':  '1OqaMHHK48SUc-NRtC8M5g9tRw1Z7FGUC',
     'sparse_matrix.npz':      '16J96-h2klT1WD-DQSHxk46JwXJnozXUi',
+    'ratings_clean.csv':      '1nlnE6MqcuAfC6Docclr89gWVadGBY_2-',
 }
 
 def download_large_files():
@@ -160,7 +161,7 @@ def load_all():
     u2i     = pickle.load(open('user_to_idx.pkl',  'rb'))
     i2m     = pickle.load(open('idx_to_movie.pkl', 'rb'))
     sp      = scipy.sparse.load_npz('sparse_user_movie.npz')
-    rat     = pd.read_csv('data/ratings_clean.csv')
+    rat     = pd.read_csv('ratings_clean.csv')
     return movies, tmdb_ml, csim, bsim, mb, als, u2i, i2m, sp, rat
 
 movies, tmdb_ml, csim, bsim, mb, als, u2i, i2m, sp, rat = load_all()

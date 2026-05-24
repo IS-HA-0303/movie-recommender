@@ -25,10 +25,9 @@ Default weights: BERT `0.5` · TF-IDF `0.3` · Collab `0.2` (adjustable in sideb
 - 🎬 **Movie Posters** — fetched live from TMDB API
 - 📊 **Score Breakdown** — see exactly how each recommendation was scored
 - 🎚️ **Adjustable Weights** — tune BERT/TF-IDF/Collab balance in real time
-- ✨ **Mouse Trail Animation** — interactive gold + green particle effect
 - 📱 **4 Recommendation Modes** — Hybrid, BERT only, TF-IDF only, Collaborative only
 - 🌙 **Cinematic Dark UI** — Spotify-inspired design with hover effects
-- 
+  
 ## 📈 Model Performance
 | Metric | Value |
 |--------|-------|
@@ -76,5 +75,4 @@ Results displayed with score breakdown
 | Dataset | Size | Purpose |
 |---------|------|---------|
 | [TMDB 5000 Movies](https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata) | 4,806 movies | Content features (genres, cast, crew, overview) |
-| [MovieLens 25M](https://grouplens.org/datasets/movielens/25m/) | 25M ratings | Collaborative filtering training |  Movie(https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata) | 4,806 movies | Content features (genres, cast, crew, overview) |
-| [MovieLens 25M](https://grouplens.org/datasets/movielens/25m/) | 25M ratings | Collaborative filtering training |
+| [MovieLens 25M](https://grouplens.org/datasets/movielens/25m/) | 25M ratings | Collaborative filtering training |  

@@ -70,6 +70,18 @@ Posters fetched from TMDB API
         ↓
 Results displayed with score breakdown
 ```
+
+## Screenshots
+
+#### Home Page
+![Home Page](screenshots/1%20(1).png)
+
+#### Recommendation Results
+![Recommendation Results](screenshots/1%20(2).png)
+
+#### Movie Details
+![Movie Details](screenshots/1%20(3).png)
+
 ## 🗃️ Datasets Used
  
 | Dataset | Size | Purpose |

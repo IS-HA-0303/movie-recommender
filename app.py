@@ -7,9 +7,8 @@ import scipy.sparse
 import gdown
 import os
 
-# ================================================================
 # DOWNLOAD LARGE FILES FROM GOOGLE DRIVE
-# ================================================================
+
 LARGE_FILES = {
     'content_similarity.pkl': '14mk1TzRIvNeFO0OTmbfgWm_dAuwzX_cd',
     'similarity.pkl':         '1FkYspVOMSg8Gx6nupjGQW5q748-PoRXu',
@@ -149,7 +148,7 @@ div[data-testid="stButton"]{display:flex !important;justify-content:center !impo
 """, unsafe_allow_html=True)
 
 
-# ── Load all data ──────────────────────────────────────────────
+# loading data 
 @st.cache_resource
 def load_all():
     movies  = pd.DataFrame(pickle.load(open('movie_dict.pkl',        'rb')))
@@ -167,7 +166,7 @@ def load_all():
 movies, tmdb_ml, csim, bsim, mb, als, u2i, i2m, sp, rat = load_all()
 
 
-# ── Fetch poster — safe version with full error handling ───────
+# Fetch poster
 def fetch_poster(movie_id):
     """
     Safe poster fetch. Returns URL string or None.
@@ -211,7 +210,7 @@ def show_poster(url, width=None):
             unsafe_allow_html=True)
 
 
-# ── Recommendation engine ──────────────────────────────────────
+# Recommendation engine
 def norm(d):
     if not d: return {}
     v = list(d.values())
@@ -280,8 +279,6 @@ def recommend(title, uid, mode, n, alpha, beta, gamma):
             .sort_values('score', ascending=False)
             .head(n).reset_index(drop=True))
 
-
-# ── Sidebar ────────────────────────────────────────────────────
 with st.sidebar:
     st.markdown("""
     <div class="sb-logo">
@@ -339,7 +336,7 @@ with st.sidebar:
             unsafe_allow_html=True)
 
 
-# ── Main page ──────────────────────────────────────────────────
+#  Main page
 st.markdown("""
 <div class="hero">
     <div class="hero-pre">AI-Powered Cinema Intelligence</div>
@@ -393,13 +390,13 @@ with col_c:
     go = st.button("▶  Find My Movies")
 
 
-# ── Results ────────────────────────────────────────────────────
+# Results part
 if go:
     with st.spinner("Curating your picks…"):
         recs = recommend(selected, user_id, mode, n_recs,
                          alpha, beta, gamma)
 
-        # Fetch posters safely — never crashes
+        
         posters = []
         for _, row in recs.iterrows():
             tid = get_tmdb_id(row['title'])
@@ -407,7 +404,7 @@ if go:
 
         sel_poster = fetch_poster(get_tmdb_id(selected))
 
-    # Selected banner
+    
     c1, c2 = st.columns([1, 8])
     with c1:
         show_poster(sel_poster, width=72)

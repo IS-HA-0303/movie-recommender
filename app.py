@@ -484,8 +484,4 @@ if go:
 Weights → BERT `{alpha}` · TF-IDF `{beta}` · Collab `{gamma}`
         """)
 
-st.markdown("""
-<div class="foot">
-    <strong>CineAI</strong> — Production-grade Hybrid Movie Recommender<br>
-    BERT · TF-IDF · ALS · MovieLens 25M · TMDB
-</div>""", unsafe_allow_html=True)
+
